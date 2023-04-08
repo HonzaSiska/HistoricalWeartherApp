@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans:wght@300&display=swap');
+
+:root {
+  --main-text-color: rgb(251, 251, 252);
+  --background: rgb(97, 138, 233);
+  --minor-background: rgb(83, 106, 158);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--background);
+  text-align: center;
+  color: var(--main-text-color);
+  font-family: 'Raleway', sans-serif;
+}
+
+#logo-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#sun {
+  width: 50px;
+  margin-left: 5px;
+}
+
+#author-name {
+  font-style: italic;
+}
+
+main {
+  width: 80%;
+  border: 1px solid var(--main-text-color);
+  border-radius: 3px;
+  margin: auto;
+  padding: 10px;
+
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-wrapper {
+  margin-top: 5px;
+}
+
+input {
+  margin-left: 5px;
+  width: 130px;
+}
+
+input[type="date"] {
+  appearance: none;
+  font-size: 14px;
+  color: var(--main-text-color);
+  -webkit-appearance: none;
+  padding: 10px;
+  border: 1px solid var(--main-text-color);
+  border-radius: 5px;
+  background-color: var(--background);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  background-color: var(--background);
+  /* background-image: url("calendar.png"); */
+  /* background-repeat: no-repeat;
+    background-position: center; */
+  /* width: 24px;
+    height: 24px; */
+  cursor: pointer;
+}
+
+select {
+  margin-top: 20px;
+  margin-left: 5px;
+  width: 120px;
+  appearance: none;
+  font-size: 14px;
+  color: var(--main-text-color);
+  -webkit-appearance: none;
+  padding: 10px;
+  border: 1px solid var(--main-text-color);
+  border-radius: 5px;
+  background-color: var(--background);
+}
+
+#hledej {
+  background: var(--main-text-color);
+  color: var(--background);
+  font-size: 14px;
+  border: none;
+  border-radius: 3px;
+  font-weight: 700;
+  padding: 5px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+#add-icon {
+  width: 30px;
+  margin-left: 5px;
+  /* background-color: var(--main-text-color); */
+  border-radius: 3px;
+  padding: 4px;
+  border: 1px solid var(--main-text-color);
+}
+
+.underlined {
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--main-text-color);
+}
+
+#dates {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+  padding:10px;
+}
+
+.added-date-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:3px;
+  border: 1px solid var(--main-text-color);
+  border-radius: 3px;
+  margin: 3px;
+}
+
+.delete-icon{
+  width: 20px;
+  margin-left: 5px;
+  padding: 4px;
+}
+
+#spinner{
+  
+  height: 200px;
+}
+.spinner-visible{
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.spinner-hidden{
+  display: none;
+}
+
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+#spinner-icon{
+  animation: rotate 3s linear infinite;
+  width: 80px;
+}
+#slunce-v-dusi{
+ margin-left: 5px;
+}
+#results-wrapper{
+  margin-top: 20px;
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  flex-direction: column;
+  width: 95%;
+}
+table{
+  border-collapse:collapse;
+  font-size: small;
+}
+thead{
+  
+}
+th{
+  border: 1px solid var(--main-text-color);
+  padding: 6px;
+  background: var(--minor-background);
+}
+td{
+  padding: 5px;
+  border:  1px solid var(--main-text-color);
+}
+
+@media screen and (min-width: 600px) {
+  #results-wrapper{
+    margin-top: 20px;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    flex-direction: column;
+    width: 70%;
+  }
+  main{
+    width: 70%;
+  }
+}
+

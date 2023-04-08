@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Weather App</title>
+</head>
+
+<body>
+    <header>
+        <div id="logo-wrapper">
+            <h1 id="logo">Počasí</h1>
+            <img src="sunicon.png" alt="sun" id="sun">
+        </div>
+        <div>
+            <h3 id='author-name'>autor - Jan Šiška</h3>
+        </div>
+
+    </header>
+    <main>
+        <div class="input-wrapper flex underlined">
+            <label>Datum</label>
+            <input id='date' class='datepicker' type="date" />
+            <img id='add-icon' src="add.png" alt="">
+        </div>
+        <div class="dates-wrapper underlined">
+            <div id="dates">
+
+            </div>
+        </div>
+        <div class="input-wrapper">
+            <label>Stanice</label>
+
+            <select name="" id="station">
+                <option value="11782">Ostrava - Mošnov</option>
+                <option value="11787">Lysá Hora</option>
+                <option value="11774">Holešov</option>
+                <option value="11723">Brno / Tuřany</option>
+                <option value="11659">Přibyslav</option>
+                <option value="11692">Náměšť nad Oslavou</option>
+                <option value="11538">Temelín</option>
+                <option value="11692">Náměšť nad Oslavou</option>
+                <option value="11450">Starý Plzenec</option>
+                <option value="11414">Karlovy Vary</option>
+                <option value="11502">Ustí nad Labem</option>
+                <option value="11464">Milešovka</option>
+                <option value="11603">Liberec</option>
+                <option value="12510">Sněžka</option>
+                <option value="11643">Pec Pod Sněžkou</option>
+                <option value="11652">Pardubice</option>
+                <option value="11679">Ustí nad Orlicí</option>
+                <option value="11518">Praha / Ruzyne</option>
+                <option value="11567">Praha / Kbely</option>
+                <option value="11520">Praha / Libus</option>
+
+            </select>
+        </div>
+        <div class="input-wrapper">
+            <button id="hledej">Hledej</button>
+        </div>
+
+        <div class="input-wrapper">
+            <div id="spinner" class="spinner-hidden">
+                <img src="sunicon.png" alt="spinner" id="spinner-icon">
+                <h3 id="slunce-v-dusi">Slunce v duši ...</h3>
+            </div>
+
+        </div>
+
+
+    </main>
+    <section id="results-wrapper">
+        <!-- <div class="table-title">
+            <h3>2023-04-07</h3>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Čas</th>
+                    <th>C°</th>
+                  
+                    <th>Vlhk.</th>
+                   
+                    <th>Srážky (mm)</th>
+                
+                    <th>Sníh (mm)</th>
+              
+                    <th>Vítr (mm)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        17:56
+                    </td>
+                    <td>
+                        8.6
+                    </td>
+                    <td>
+                        82
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        null
+                    </td>
+                    <td>
+                        18
+                    </td>
+                </tr>
+               
+            </tbody>
+        </table> -->
+        
+    </section>
+    <script src="util.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
