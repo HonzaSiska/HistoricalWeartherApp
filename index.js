@@ -9,7 +9,8 @@ app.post('/api/fetch', async (req, res) => {
     let fetchedData = []
 
     const {dates, station} = req.body
-    console.log('body', dates)
+    console.log('body', process.env.XRapidAPIKey )
+    console.log('env1', process.env.XRapidAPIHost)
    
     for(let item of dates){
         console.log('item', item)

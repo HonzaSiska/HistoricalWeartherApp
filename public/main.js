@@ -5,8 +5,6 @@ const addBtn = document.querySelector('#add-icon')
 const spinner = document.querySelector('#spinner')
 let dates = []
 
-
-
 addBtn.addEventListener('click', e => {
 
     let selectedDate = document.querySelector('#date').value
@@ -144,22 +142,7 @@ hledejBtn.addEventListener('click', async (e) => {
 
 })
 
-    // DISPLAY DATA HERE IN TABLE
-
-    // const format =  [
-    //     {
-    //         meta:{}, data: [
-                 
-    //             {time: '2023-04-01 00:00:00', temp: 8.6, dwpt: 5.7, rhum: 82, prcp: 0}, {} {}
-    //         ]
-    //     },
-    //     {
-    //         meta:{}, data: [
-                 
-    //             {time: '2023-04-01 00:00:00', temp: 8.6, dwpt: 5.7, rhum: 82, prcp: 0}, {} {}
-    //         ]
-    //     }
-    // ]
+    
 
 
 
