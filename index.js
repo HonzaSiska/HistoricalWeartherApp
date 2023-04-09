@@ -28,12 +28,7 @@ app.post('/api/fetch', async (req, res) => {
     //   }
       
     //    delayedLoop();
-    
-
-
     console.log('result', JSON.stringify(fetchedData))
-
-    // console.log(req.body)
     res.json(JSON.stringify(fetchedData));
 });
 const PORT = process.env.PORT || 4000
