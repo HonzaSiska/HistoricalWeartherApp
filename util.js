@@ -1,3 +1,5 @@
+const fetch = require('node-fetch');
+
 const  fetchData  = async (date, station) => {
     
     const options = {
