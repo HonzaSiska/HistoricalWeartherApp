@@ -1,5 +1,5 @@
 const fetchData = async (date, station) => {
-
+    
     const options = {
         method: 'GET',
         headers: {
@@ -11,6 +11,7 @@ const fetchData = async (date, station) => {
     try {
         const fetchedData = await fetch(`https://meteostat.p.rapidapi.com/stations/hourly?station=${station}&start=${date}&end=${date}&tz=Europe%2FPrague&units=metric`, options)
         const json = await fetchedData.json()
+        console.log('json', json)
         return json
     } catch (error) {
         return error
