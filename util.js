@@ -1,4 +1,4 @@
-const fetchData = async (date, station) => {
+const  fetchData  = async (date, station) => {
     
     const options = {
         method: 'GET',
@@ -31,4 +31,5 @@ const fetchData = async (date, station) => {
 module.exports = {
     fetchData
 }
+
 

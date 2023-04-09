@@ -2,7 +2,7 @@ require('dotenv').config()
 const cors = require('cors')
 const express = require('express');
 
-const { fetchData } = require("./util.js")
+const {fetchData} = require("./util.js");
 
 const app = express();
 
@@ -18,12 +18,18 @@ app.post('/api/fetch', async (req, res) => {
     const {dates, station} = req.body
     console.log('body', process.env.XRapidAPIKey )
     console.log('env1', process.env.XRapidAPIHost)
-   
-    for(let item of dates){
-        console.log('item', item)
-        const result =  await fetchData(item.date, station)
-        fetchedData.push(result)
+
+    const runLoop = async()=> {
+        for(let item of dates){
+            console.log('item', item)
+            const result =  await fetchData(item.date, station)
+            fetchedData.push(result)
+        }
     }
+
+    await runLoop()
+   
+    
 
     // function delayedLoop() {
     //     for (let i = 0; i < dates.length -1 ; i++) {
@@ -36,6 +42,7 @@ app.post('/api/fetch', async (req, res) => {
       
     //    delayedLoop();
     console.log('result', JSON.stringify(fetchedData))
+    
     res.json(JSON.stringify(fetchedData));
 });
 const PORT = process.env.PORT || 4000
