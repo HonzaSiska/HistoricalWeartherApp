@@ -14,6 +14,7 @@ const fetchData = async (date, station) => {
         console.log('json', json)
         return json
     } catch (error) {
+        console.log('error',error)
         return error
     }
 
