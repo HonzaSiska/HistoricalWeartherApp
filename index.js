@@ -17,8 +17,8 @@ app.post('/api/fetch', async (req, res) => {
     let fetchedData = []
 
     const { dates, station } = req.body
-    console.log('body', process.env.XRapidAPIKey)
-    console.log('env1', process.env.XRapidAPIHost)
+    console.log('env1', process.env.XRapidAPIKey)
+    console.log('env2', process.env.XRapidAPIHost)
 
 
     const options = {
@@ -57,6 +57,7 @@ app.post('/api/fetch', async (req, res) => {
             console.log('result', JSON.stringify(fetchedData))
         }
     }
+    
     try {
         await runLoop()
         res.json(JSON.stringify(fetchedData));
@@ -64,14 +65,9 @@ app.post('/api/fetch', async (req, res) => {
         console.log(error)
     }
 
-    
-
     // console.log('result', JSON.stringify(fetchedData))
 
     // res.json(JSON.stringify(fetchedData));
-
-
-
 
 });
 const PORT = process.env.PORT || 4000
