@@ -130,7 +130,7 @@ hledejBtn.addEventListener('click', async (e) => {
         const parsedDate = data[0].time.split(" ")[0]
 
         html += `<div class="single-table-wrapper draggables" draggable="true">
-        <img class='drag-icon' src='drag-flick.png' alt='drag' />`
+        <img class='drag-icon' src='/drag-flick.png' alt='drag' />`
 
         html += `<table class="table-results" >
                 <tr>
