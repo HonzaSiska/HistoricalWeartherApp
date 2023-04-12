@@ -76,48 +76,48 @@ hledejBtn.addEventListener('click', async (e) => {
 
     const station = document.querySelector('#station').value
     const resultsSection = document.querySelector('#results-wrapper')
-    const results = await fetchData(dates, station)
-    console.log(results)
+    // const results = await fetchData(dates, station)
+    // console.log(results)
 
     let html = ''
 
 
     // TEST DATA
-    // const results = [
-    //     {
-    //         meta: {}, data: [
-    //             { time: "2020-01-01 00:00:00", temp: 0.3, dwpt: -1.5, rhum: 88, prcp: 0, snow: null, wdir: 40, wspd: 8.6, wpgt: 13, pres: 1036.9, tsun: 0, coco: 3 },
-    //             { time: "2020-01-01 00:00:00", temp: 0.3, dwpt: -1.5, rhum: 88, prcp: 0, snow: null, wdir: 40, wspd: 8.6, wpgt: 13, pres: 1036.9, tsun: 0, coco: 3 },
-    //             { time: "2020-01-01 00:00:00", temp: 0.3, dwpt: -1.5, rhum: 88, prcp: 0, snow: null, wdir: 40, wspd: 8.6, wpgt: 13, pres: 1036.9, tsun: 0, coco: 3 },
-    //             { time: "2020-01-01 00:00:00", temp: 0.3, dwpt: -1.5, rhum: 88, prcp: 0, snow: null, wdir: 40, wspd: 8.6, wpgt: 13, pres: 1036.9, tsun: 0, coco: 3 },
-    //             { time: "2020-01-01 00:00:00", temp: 0.3, dwpt: -1.5, rhum: 88, prcp: 0, snow: null, wdir: 40, wspd: 8.6, wpgt: 13, pres: 1036.9, tsun: 0, coco: 3 },
-    //             { time: "2020-01-01 00:00:00", temp: 0.3, dwpt: -1.5, rhum: 88, prcp: 0, snow: null, wdir: 40, wspd: 8.6, wpgt: 13, pres: 1036.9, tsun: 0, coco: 3 },
+    const results = [
+        {
+            meta: {}, data: [
+                { time: "2020-01-01 00:00:00", temp: 0.3, dwpt: -1.5, rhum: 88, prcp: 0, snow: null, wdir: 40, wspd: 8.6, wpgt: 13, pres: 1036.9, tsun: 0, coco: 3 },
+                { time: "2020-01-01 00:00:00", temp: 0.3, dwpt: -1.5, rhum: 88, prcp: 0, snow: null, wdir: 40, wspd: 8.6, wpgt: 13, pres: 1036.9, tsun: 0, coco: 3 },
+                { time: "2020-01-01 00:00:00", temp: 0.3, dwpt: -1.5, rhum: 88, prcp: 0, snow: null, wdir: 40, wspd: 8.6, wpgt: 13, pres: 1036.9, tsun: 0, coco: 3 },
+                { time: "2020-01-01 00:00:00", temp: 0.3, dwpt: -1.5, rhum: 88, prcp: 0, snow: null, wdir: 40, wspd: 8.6, wpgt: 13, pres: 1036.9, tsun: 0, coco: 3 },
+                { time: "2020-01-01 00:00:00", temp: 0.3, dwpt: -1.5, rhum: 88, prcp: 0, snow: null, wdir: 40, wspd: 8.6, wpgt: 13, pres: 1036.9, tsun: 0, coco: 3 },
+                { time: "2020-01-01 00:00:00", temp: 0.3, dwpt: -1.5, rhum: 88, prcp: 0, snow: null, wdir: 40, wspd: 8.6, wpgt: 13, pres: 1036.9, tsun: 0, coco: 3 },
 
-    //         ]
-    //     },
-    //     {
-    //         meta: {}, data: [
-    //             { time: "2020-01-01 00:00:00", temp: 0.3, dwpt: -1.5, rhum: 88, prcp: 0, snow: null, wdir: 40, wspd: 8.6, wpgt: 13, pres: 1036.9, tsun: 0, coco: 3 },
-    //             { time: "2020-01-01 00:00:00", temp: 0.3, dwpt: -1.5, rhum: 88, prcp: 0, snow: null, wdir: 40, wspd: 8.6, wpgt: 13, pres: 1036.9, tsun: 0, coco: 3 },
-    //             { time: "2020-01-01 00:00:00", temp: 0.3, dwpt: -1.5, rhum: 88, prcp: 0, snow: null, wdir: 40, wspd: 8.6, wpgt: 13, pres: 1036.9, tsun: 0, coco: 3 },
-    //             { time: "2020-01-01 00:00:00", temp: 0.3, dwpt: -1.5, rhum: 88, prcp: 0, snow: null, wdir: 40, wspd: 8.6, wpgt: 13, pres: 1036.9, tsun: 0, coco: 3 },
-    //             { time: "2020-01-01 00:00:00", temp: 0.3, dwpt: -1.5, rhum: 88, prcp: 0, snow: null, wdir: 40, wspd: 8.6, wpgt: 13, pres: 1036.9, tsun: 0, coco: 3 },
-    //             { time: "2020-01-01 00:00:00", temp: 0.3, dwpt: -1.5, rhum: 88, prcp: 0, snow: null, wdir: 40, wspd: 8.6, wpgt: 13, pres: 1036.9, tsun: 0, coco: 3 },
+            ]
+        },
+        {
+            meta: {}, data: [
+                { time: "2020-01-01 00:00:00", temp: 0.3, dwpt: -1.5, rhum: 88, prcp: 0, snow: null, wdir: 40, wspd: 8.6, wpgt: 13, pres: 1036.9, tsun: 0, coco: 3 },
+                { time: "2020-01-01 00:00:00", temp: 0.3, dwpt: -1.5, rhum: 88, prcp: 0, snow: null, wdir: 40, wspd: 8.6, wpgt: 13, pres: 1036.9, tsun: 0, coco: 3 },
+                { time: "2020-01-01 00:00:00", temp: 0.3, dwpt: -1.5, rhum: 88, prcp: 0, snow: null, wdir: 40, wspd: 8.6, wpgt: 13, pres: 1036.9, tsun: 0, coco: 3 },
+                { time: "2020-01-01 00:00:00", temp: 0.3, dwpt: -1.5, rhum: 88, prcp: 0, snow: null, wdir: 40, wspd: 8.6, wpgt: 13, pres: 1036.9, tsun: 0, coco: 3 },
+                { time: "2020-01-01 00:00:00", temp: 0.3, dwpt: -1.5, rhum: 88, prcp: 0, snow: null, wdir: 40, wspd: 8.6, wpgt: 13, pres: 1036.9, tsun: 0, coco: 3 },
+                { time: "2020-01-01 00:00:00", temp: 0.3, dwpt: -1.5, rhum: 88, prcp: 0, snow: null, wdir: 40, wspd: 8.6, wpgt: 13, pres: 1036.9, tsun: 0, coco: 3 },
 
-    //         ]
-    //     },
-    //     {
-    //         meta: {}, data: [
-    //             { time: "2020-01-01 00:00:00", temp: 0.3, dwpt: -1.5, rhum: 88, prcp: 0, snow: null, wdir: 40, wspd: 8.6, wpgt: 13, pres: 1036.9, tsun: 0, coco: 3 },
-    //             { time: "2020-01-01 00:00:00", temp: 0.3, dwpt: -1.5, rhum: 88, prcp: 0, snow: null, wdir: 40, wspd: 8.6, wpgt: 13, pres: 1036.9, tsun: 0, coco: 3 },
-    //             { time: "2020-01-01 00:00:00", temp: 0.3, dwpt: -1.5, rhum: 88, prcp: 0, snow: null, wdir: 40, wspd: 8.6, wpgt: 13, pres: 1036.9, tsun: 0, coco: 3 },
-    //             { time: "2020-01-01 00:00:00", temp: 0.3, dwpt: -1.5, rhum: 88, prcp: 0, snow: null, wdir: 40, wspd: 8.6, wpgt: 13, pres: 1036.9, tsun: 0, coco: 3 },
-    //             { time: "2020-01-01 00:00:00", temp: 0.3, dwpt: -1.5, rhum: 88, prcp: 0, snow: null, wdir: 40, wspd: 8.6, wpgt: 13, pres: 1036.9, tsun: 0, coco: 3 },
-    //             { time: "2020-01-01 00:00:00", temp: 0.3, dwpt: -1.5, rhum: 88, prcp: 0, snow: null, wdir: 40, wspd: 8.6, wpgt: 13, pres: 1036.9, tsun: 0, coco: 3 },
+            ]
+        },
+        {
+            meta: {}, data: [
+                { time: "2020-01-01 00:00:00", temp: 0.3, dwpt: -1.5, rhum: 88, prcp: 0, snow: null, wdir: 40, wspd: 8.6, wpgt: 13, pres: 1036.9, tsun: 0, coco: 3 },
+                { time: "2020-01-01 00:00:00", temp: 0.3, dwpt: -1.5, rhum: 88, prcp: 0, snow: null, wdir: 40, wspd: 8.6, wpgt: 13, pres: 1036.9, tsun: 0, coco: 3 },
+                { time: "2020-01-01 00:00:00", temp: 0.3, dwpt: -1.5, rhum: 88, prcp: 0, snow: null, wdir: 40, wspd: 8.6, wpgt: 13, pres: 1036.9, tsun: 0, coco: 3 },
+                { time: "2020-01-01 00:00:00", temp: 0.3, dwpt: -1.5, rhum: 88, prcp: 0, snow: null, wdir: 40, wspd: 8.6, wpgt: 13, pres: 1036.9, tsun: 0, coco: 3 },
+                { time: "2020-01-01 00:00:00", temp: 0.3, dwpt: -1.5, rhum: 88, prcp: 0, snow: null, wdir: 40, wspd: 8.6, wpgt: 13, pres: 1036.9, tsun: 0, coco: 3 },
+                { time: "2020-01-01 00:00:00", temp: 0.3, dwpt: -1.5, rhum: 88, prcp: 0, snow: null, wdir: 40, wspd: 8.6, wpgt: 13, pres: 1036.9, tsun: 0, coco: 3 },
 
-    //         ]
-    //     }
-    // ]
+            ]
+        }
+    ]
 
     let tableNumber = 0
 
@@ -129,7 +129,7 @@ hledejBtn.addEventListener('click', async (e) => {
 
         const parsedDate = data[0].time.split(" ")[0]
 
-        html += `<div class="single-table-wrapper draggables" draggable="true">
+        html += `<div class="single-table-wrapper draggables">
         <img class='drag-icon' src='/drag-flick.png' alt='drag' />`
 
         html += `<table class="table-results" >
@@ -223,6 +223,8 @@ hledejBtn.addEventListener('click', async (e) => {
                 const randomHeight = Math.floor(Math.random() * 200)
                 e.target.parentNode.classList.add('can-be-dragged')
                 e.target.style.display = 'none'
+                e.target.parentNode.setAttribute('draggable',true) 
+                
                 //place draggable window on screen in random position
                 item.style.left = randomHeight + 'px'
                 item.style.top = distanceFromTop + randomHeight + 'px'
@@ -230,10 +232,12 @@ hledejBtn.addEventListener('click', async (e) => {
         })
         dragIcons.forEach(icon => {
             icon.addEventListener('touchend', (e) => {
+                
                 const distanceFromTop = document.documentElement.scrollTop || document.body.scrollTop
                 const randomHeight = Math.floor(Math.random() * 200)
                 e.target.parentNode.classList.add('can-be-dragged')
                 e.target.style.display = 'none'
+                e.target.parentNode.setAttribute('draggable',true) 
                 //place draggable window on screen in random position
                 item.style.left = randomHeight + 'px'
                 item.style.top = distanceFromTop + randomHeight + 'px'
@@ -262,12 +266,14 @@ hledejBtn.addEventListener('click', async (e) => {
 
 
         function handleTouchStart(e) {
+            e.preventDefault();
             initialX = e.touches[0].clientX - xOffset;
             initialY = e.touches[0].clientY - yOffset;
             console.log('touch')
         }
 
         function handleTouchMove(e) {
+            e.preventDefault();
             if (e.touches.length === 1) {
                 currentX = e.touches[0].clientX - initialX;
                 currentY = e.touches[0].clientY - initialY;

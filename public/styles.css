@@ -208,6 +208,7 @@ select {
   width: 30px;
   left: 10px;
   top: 40px;
+  display: none;
 }
 
 table {
@@ -256,7 +257,7 @@ col {
   color: var(--main-text-color);
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 764px) {
   #results-wrapper {
     margin-top: 20px;
     display: flex;
@@ -273,6 +274,10 @@ col {
   .table-title h3 {
     text-align: center;
     /* margin-left: 5px; */
+  }
+  .drag-icon {
+    
+    display: block;
   }
 
 }
