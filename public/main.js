@@ -197,64 +197,57 @@ hledejBtn.addEventListener('click', async (e) => {
     const dragIcons = document.querySelectorAll('.drag-icon')
     const draggables = document.querySelectorAll(".draggables");
     const tableWrapper = document.querySelectorAll(".single-table-wrapper");
-    let initialX, initialY, currentX, currentY;
+    let initialX, initialY, currentX, currentY; xOffset = 0, yOffset = 0;
 
     console.log(draggables)
 
-    window.addEventListener('resize', (e)=> {
-        tableWrapper.forEach(p=> {
-            p.children[0].style.left = p.offsetLeft  + 'px'
-        //    console.log(p.children[0])
-       })
+    window.addEventListener('resize', (e) => {
+        tableWrapper.forEach(p => {
+            p.children[0].style.left = p.offsetLeft + 'px'
+            //    console.log(p.children[0])
+        })
     })
 
     // place drag icon in the right place
-    tableWrapper.forEach(p=> {
-         p.children[0].style.left = p.offsetLeft  + 'px'
+    tableWrapper.forEach(p => {
+        p.children[0].style.left = p.offsetLeft + 'px'
         console.log(p.children[0])
     })
 
     draggables.forEach(item => {
         console.log(item)
         // on dbclick make whole table wrapper draggable
-        dragIcons.forEach(icon=> {
-            icon.addEventListener('dblclick', (e)=> {
+        dragIcons.forEach(icon => {
+            icon.addEventListener('dblclick', (e) => {
                 const distanceFromTop = document.documentElement.scrollTop || document.body.scrollTop
                 const randomHeight = Math.floor(Math.random() * 200)
                 e.target.parentNode.classList.add('can-be-dragged')
-                e.target.style.display='none'
+                e.target.style.display = 'none'
                 //place draggable window on screen in random position
-                item.style.left= randomHeight + 'px'
-                item.style.top =  distanceFromTop+  randomHeight + 'px'
+                item.style.left = randomHeight + 'px'
+                item.style.top = distanceFromTop + randomHeight + 'px'
             })
         })
-        dragIcons.forEach(icon=> {
-            icon.addEventListener('touchend', (e)=> {
+        dragIcons.forEach(icon => {
+            icon.addEventListener('touchend', (e) => {
                 const distanceFromTop = document.documentElement.scrollTop || document.body.scrollTop
                 const randomHeight = Math.floor(Math.random() * 200)
                 e.target.parentNode.classList.add('can-be-dragged')
-                e.target.style.display='none'
+                e.target.style.display = 'none'
                 //place draggable window on screen in random position
-                item.style.left= randomHeight + 'px'
-                item.style.top =  distanceFromTop+  randomHeight + 'px'
+                item.style.left = randomHeight + 'px'
+                item.style.top = distanceFromTop + randomHeight + 'px'
             })
         })
 
         // DRAGGING FUNCTIONALITY
-        
+
         item.addEventListener("dragstart", function (event) {
             event.dataTransfer.setData("text/plain", event.target.id);
             initialX = event.clientX;
             initialY = event.clientY;
 
         });
-        item.addEventListener("touchstart", function (event) {
-            event.dataTransfer.setData("text/plain", event.target.id);
-            initialX = event.clientX;
-            initialY = event.clientY;
-
-        });
-
 
         item.addEventListener("dragend", function (event) {
             currentX = event.clientX - initialX;
@@ -262,14 +255,38 @@ hledejBtn.addEventListener('click', async (e) => {
             event.target.style.left = (event.target.offsetLeft + currentX) + "px";
             event.target.style.top = (event.target.offsetTop + currentY) + "px";
         });
-        item.addEventListener("touchend", function (event) {
-            currentX = event.clientX - initialX;
-            currentY = event.clientY - initialY;
-            event.target.style.left = (event.target.offsetLeft + currentX) + "px";
-            event.target.style.top = (event.target.offsetTop + currentY) + "px";
-        });
+
+        item.addEventListener('touchstart', handleTouchStart, false);
+        item.addEventListener('touchmove', handleTouchMove, false);
+        item.addEventListener('touchend', handleTouchEnd, false);
 
 
+        function handleTouchStart(e) {
+            initialX = e.touches[0].clientX - xOffset;
+            initialY = e.touches[0].clientY - yOffset;
+            console.log('touch')
+        }
+
+        function handleTouchMove(e) {
+            if (e.touches.length === 1) {
+                currentX = e.touches[0].clientX - initialX;
+                currentY = e.touches[0].clientY - initialY;
+
+                xOffset = currentX;
+                yOffset = currentY;
+
+                setTranslate(currentX, currentY, item);
+                console.log('move')
+            }
+        }
+
+        function handleTouchEnd(e) {
+            // Handle drag and drop end actions
+        }
+
+        function setTranslate(xPos, yPos, el) {
+            el.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
+        }
     })
 
 
